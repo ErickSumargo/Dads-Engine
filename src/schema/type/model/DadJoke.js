@@ -1,7 +1,8 @@
 const model = `
   type DadJoke {
     id: ID!
-    joke: String!,
+    setup: String!
+    punchline: String!
     snapshot: String
   }
 `;

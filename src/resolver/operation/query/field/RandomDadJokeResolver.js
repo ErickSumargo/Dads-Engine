@@ -2,7 +2,7 @@ const mapper = require('../../../../mapper/DadJokeMapper')
 
 const resolver = async (_, __, { dataSources }) => {
     try {
-        const response = await dataSources.dadJokesAPI.fetchRandomDadJoke();
+        const response = await dataSources.api.dadJokes.fetchRandomDadJoke();
         return mapper(response)
     } catch (error) {
         console.log(error)

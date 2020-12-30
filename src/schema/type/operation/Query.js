@@ -3,8 +3,7 @@ const response = require('../response/DadJokesResponse');
 const query = `
   type Query {
     dadJokes(
-      page: Int!
-      term: String = ""
+      cursor: String
       limit: Int = 20
     ): DadJokesResponse!
 

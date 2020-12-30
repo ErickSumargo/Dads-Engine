@@ -1,0 +1,18 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dads.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model DadJoke {
+  id        Int      @id @default(autoincrement()) @map(name: "id")
+  setup     String   @map(name: "setup")
+  punchline String   @map(name: "punchline")
+  snapshot  String?  @map(name: "snapshot")
+  createdAt DateTime @default(now()) @map(name: "created_at")
+
+  @@map(name: "dad_joke")
+}

@@ -1,6 +1,6 @@
-const BaseAPI = require('./BaseAPI');
+const BaseService = require('./BaseService');
 
-class DadJokesAPI extends BaseAPI {
+class DadJokesService extends BaseService {
 
     async fetchDadJokes(page, limit, term) {
         const response = await this.get(
@@ -23,4 +23,4 @@ class DadJokesAPI extends BaseAPI {
     }
 }
 
-module.exports = DadJokesAPI;
+module.exports = DadJokesService;

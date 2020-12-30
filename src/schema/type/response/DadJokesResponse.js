@@ -3,11 +3,8 @@ const model = require('../model/DadJoke');
 const response = `
   type DadJokesResponse {
     jokes: [DadJoke!]!
+    cursor: String
     limit: Int!
-    page: Int!
-    term: String!
-    totalJokes: Int!
-    totalPages: Int!
   }
 `;
 
