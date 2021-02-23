@@ -1,5 +1,5 @@
 datasource db {
-  provider = "sqlite"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
@@ -8,10 +8,10 @@ generator client {
 }
 
 model DadJoke {
-  id        Int      @id @default(autoincrement()) @map(name: "id")
-  setup     String   @map(name: "setup")
-  punchline String   @map(name: "punchline")
-  createdAt DateTime @default(now()) @map(name: "created_at")
+  id        Int      @id @default(autoincrement())
+  setup     String
+  punchline String
+  createdAt DateTime @default(now()) @map("created_at")
 
-  @@map(name: "dad_joke")
+  @@map("dad_joke")
 }
