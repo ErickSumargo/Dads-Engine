@@ -3,7 +3,6 @@ const model = `
     id: ID!
     setup: String!
     punchline: String!
-    snapshot: String
   }
 `;
 
