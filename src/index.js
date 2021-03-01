@@ -18,7 +18,9 @@ const server = new ApolloServer({
     typeDefs,
     resolvers,
     dataSources,
-    context
+    context,
+    introspection: true,
+    playground: true
 });
 
 server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
