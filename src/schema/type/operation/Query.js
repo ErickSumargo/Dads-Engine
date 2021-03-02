@@ -6,8 +6,6 @@ const query = `
       cursor: String
       limit: Int = 20
     ): DadJokesResponse!
-
-    randomDadJoke: DadJoke!
   }
 `;
 
