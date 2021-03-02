@@ -1,14 +1,14 @@
 const jwt = require('jsonwebtoken');
-const { ApolloError } = require('apollo-server');
 
 const context = async ({ req }) => {
     const auth = (req.headers && req.headers.authorization) || '';
     const token = auth.split(" ")[1];
 
     try {
-        jwt.verify(token, process.env.JWT_VERIFICATION_KEY);
+        const decoded = jwt.verify(token, process.env.JWT_VERIFICATION_KEY)
+        return { verified: decoded.app };
     } catch (error) {
-        throw new ApolloError('Unauthorized');
+        return { verified: null };
     }
 };
 
