@@ -1,9 +1,7 @@
 const dadJokesResolver = require('./field/DadJokesResolver')
-const randomDadJokeResolver = require('./field/RandomDadJokeResolver')
 
 const Query = {
-    dadJokes: dadJokesResolver,
-    randomDadJoke: randomDadJokeResolver
+    dadJokes: dadJokesResolver
 };
 
 module.exports = Query;
