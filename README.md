@@ -1,5 +1,5 @@
 [<img src="assets/logo.png" width="120" height="120">]()
-[<img align="right" src="assets/graphql.png" width="80" height="80">](https://dads-engine.herokuapp.com/graphql)
+[<img align="right" src="assets/heroku.png" width="20%">](https://dads-engine.herokuapp.com)
 
 [![CI](https://github.com/ErickSumargo/Dads-Engine/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/ErickSumargo/Dads-Engine/actions/workflows/ci.yml)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FErickSumargo%2FDads-Engine.svg?type=small)](https://app.fossa.com/projects/git%2Bgithub.com%2FErickSumargo%2FDads-Engine?ref=badge_small)
@@ -20,13 +20,36 @@ Microservice for client [**<u>Dads</u>**](https://github.com/ErickSumargo/Dads) 
 ## Architecture
 [<img src="assets/architecture.png">]()
 
-## Design Principles
-- [Elegant Objects (EO)](https://www.elegantobjects.org),
-- [S.O.L.I.D](https://en.wikipedia.org/wiki/SOLID).
-<br/>
-
 ## How to run
-
+- Install dependencies for local `node_modules`.
+```
+npm install
+```
+- Generate Prisma Client (**experimental**).
+```
+npx prisma generate --schema src/database/schema.prisma
+```
+- Setup your local MySQL database and retrieve the URL. The URL placeholder will be:
+```
+mysql://USER:PASSWORD@HOST:PORT/DATABASE, 
+for example: mysql://root:1234@127.0.0.1:3306/dads
+```
+Note: If you don't set the password, you may omit the `:1234` part.
+<br/>
+<br/>
+- Create new `.env` file in the root project's root folder, then set:
+```
+DATABASE_URL=[MYSQL_DATABASE_URL]
+JWT_VERIFICATION=[SHARED_KEY] (see Contributing section 👇)
+```
+- Run the application.
+```
+npm start
+```
+- The default port for the application should be `4000` (you may configure it too). Now you can visit:
+```
+http://localhost:4000
+```
 
 
 ## Contributing
